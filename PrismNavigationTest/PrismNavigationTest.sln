@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.Shell", "PrismNavigationTest.Shell\PrismNavigationTest.Shell.csproj", "{991EB38B-3A9D-4A46-A13A-71F62F040A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.Web", "PrismNavigationTest.Web\PrismNavigationTest.Web.csproj", "{E49AE833-B761-4071-813E-53CD03D7F03C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrismNavigationTest.RIA", "PrismNavigationTest.RIA", "{CDA9B5C9-E48A-41CB-8F41-2F8548AC9111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.RIA.Web", "PrismNavigationTest.RIA.Web\PrismNavigationTest.RIA.Web.csproj", "{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.RIA", "PrismNavigationTest.RIA\PrismNavigationTest.RIA.csproj", "{882FD987-FDA8-4F43-9855-771F20BF1CE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75} = {B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.Infrastructure", "PrismNavigationTest.Infrastructure\PrismNavigationTest.Infrastructure.csproj", "{FAA7FB54-8917-4B61-8C8D-7932D513D108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismNavigationTest.Modules", "PrismNavigationTest.Modules\PrismNavigationTest.Modules.csproj", "{A555F6C8-D051-4C8A-A248-0FFAAB946448}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{991EB38B-3A9D-4A46-A13A-71F62F040A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991EB38B-3A9D-4A46-A13A-71F62F040A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991EB38B-3A9D-4A46-A13A-71F62F040A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{991EB38B-3A9D-4A46-A13A-71F62F040A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49AE833-B761-4071-813E-53CD03D7F03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49AE833-B761-4071-813E-53CD03D7F03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49AE833-B761-4071-813E-53CD03D7F03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49AE833-B761-4071-813E-53CD03D7F03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882FD987-FDA8-4F43-9855-771F20BF1CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882FD987-FDA8-4F43-9855-771F20BF1CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882FD987-FDA8-4F43-9855-771F20BF1CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882FD987-FDA8-4F43-9855-771F20BF1CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA7FB54-8917-4B61-8C8D-7932D513D108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA7FB54-8917-4B61-8C8D-7932D513D108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA7FB54-8917-4B61-8C8D-7932D513D108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA7FB54-8917-4B61-8C8D-7932D513D108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A555F6C8-D051-4C8A-A248-0FFAAB946448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A555F6C8-D051-4C8A-A248-0FFAAB946448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A555F6C8-D051-4C8A-A248-0FFAAB946448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A555F6C8-D051-4C8A-A248-0FFAAB946448}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B695E3F2-4C0B-41A7-8CE6-D0F214F45F75} = {CDA9B5C9-E48A-41CB-8F41-2F8548AC9111}
+		{882FD987-FDA8-4F43-9855-771F20BF1CE8} = {CDA9B5C9-E48A-41CB-8F41-2F8548AC9111}
+	EndGlobalSection
+EndGlobal

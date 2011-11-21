@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PrismNavigationTest.Shell.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:controls="clr-namespace:Microsoft.Windows.Controls;assembly=Microsoft.Windows.Controls"
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+    xmlns:Regions="http://www.codeplex.com/prism"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        
+        <Style x:Key="ContentFrameStyle" TargetType="navigation:Frame">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="58,15,58,15"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
+                           Navigated="ContentFrame_Navigated" ContentLoader="{Binding ContentLoader}"
+                           Source="{Binding FrameSource, Mode=TwoWay}"
+                           Regions:RegionManager.RegionName="Main"> 
+            <navigation:Frame.UriMapper>
+                <uriMapper:UriMapper>
+                    <uriMapper:UriMapping Uri="" MappedUri="View1" />
+                    <uriMapper:UriMapping Uri="/" MappedUri="View1" />
+                    <uriMapper:UriMapping Uri="/{pageName}/" MappedUri="{}{pageName}" />                    
+                </uriMapper:UriMapper>
+            </navigation:Frame.UriMapper>
+        </navigation:Frame>
+    </Grid>
+</UserControl>
