@@ -5,4 +5,5 @@ MVCExample1 is a MVC 3 Razor demo project, following a tutorial.
 
 PrismNavigationTest is a Silverlight project using the Unity and Prism frameworks along with WCF RIA Serivces to set up a project. This includes a working navigation framework, domain service call, domain context class, and a configured Unity container with modularity.
 	- Prereqs: Silverlight 4, Silverlight 4 SDK, Silverlight 4 Toolkit, Silverlight Tools for VS2010, WCF RIA Services SP1, 
-	- Add reference packages: Unity, Prism, Prism.UnityExtensions
+	- Add reference packages: Unity, Prism, Prism.UnityExtensions   
+	
