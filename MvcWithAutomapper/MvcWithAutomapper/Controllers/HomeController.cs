@@ -21,6 +21,7 @@ namespace MvcWithAutomapper.Controllers
             };
 
             Mapper.CreateMap<Models.Blog, Models.BlogSummary>()
+                .AfterMap((src, dest) => dest.AuthorBio += "$")
                 .ForMember(x => x.AuthorBio, opt => 
                                                 {
                                                     opt.NullSubstitute("N/A");
