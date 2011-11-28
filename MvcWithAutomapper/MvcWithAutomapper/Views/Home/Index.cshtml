@@ -1,0 +1,17 @@
+﻿@model MvcWithAutomapper.Models.BlogSummary[]
+           @{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<div>
+    @foreach (var blogSummary in Model)
+    {
+        <h3>@blogSummary.Title </h3>
+        @blogSummary.Description <br />
+        <p>Author name: @blogSummary.AuthorName<br />
+        Author age: @blogSummary.AuthorAge<br />
+        Bio: @blogSummary.AuthorBio</p>
+        
+    }
+</div>
