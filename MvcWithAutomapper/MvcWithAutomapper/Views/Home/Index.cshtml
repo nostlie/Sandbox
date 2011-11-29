@@ -1,17 +1,53 @@
-﻿@model MvcWithAutomapper.Models.BlogSummary[]
+﻿@using MvcWithAutomapper.Models;
+@using System.Linq;
+
+@model BlogSummary[]
            @{
-    ViewBag.Title = "Home Page";
+               ViewBag.Title = "Home Page";
 }
 
-<h2>@ViewBag.Message</h2>
-<div>
-    @foreach (var blogSummary in Model)
-    {
-        <h3>@blogSummary.Title </h3>
-        @blogSummary.Description <br />
-        <p>Author name: @blogSummary.AuthorName<br />
-        Author age: @blogSummary.AuthorAge<br />
-        Bio: @blogSummary.AuthorBio</p>
-        
-    }
-</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#button1').click(function () {
+
+            $('#div2').fadeToggle('slow');
+        });
+    });
+
+    
+    
+</script>
+
+<table>
+    <tr>
+        <td style="width:400px;">
+        <h2>@ViewBag.Message</h2>
+        <div>
+            @foreach (var blogSummary in Model)
+            {
+                <h3>@blogSummary.Title </h3>
+                @blogSummary.Description <br />
+                <p id="authorinfo">Author name: @blogSummary.AuthorName<br />
+                Author age: @blogSummary.AuthorAge<br />
+                Bio: @blogSummary.AuthorBio</p>
+            }
+        </div>
+
+        </td>
+        <td valign="top" style="width:400px;">
+            <input type="button" id="button1" value="Click Me" /><br />
+            <div id="div2" style="display:none;">
+                @foreach (var blogSummary in Model)
+                {
+                <h3>@blogSummary.Title </h3>
+                @blogSummary.Description <br />
+                <p>Author name: @blogSummary.AuthorName<br />
+                Author age: @blogSummary.AuthorAge<br />
+                Bio: @blogSummary.AuthorBio</p>
+                }
+            </div>
+        </td>
+    </tr>
+
+</table>
