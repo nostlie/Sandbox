@@ -61,6 +61,48 @@ namespace MvcWithAutomapper.Controllers
             return View();
         }
 
+        public ActionResult CreateBlog()
+        {
+
+            Models.BlogSummary summary = new Models.BlogSummary();
+
+            return View(summary);
+        } 
+
+        [HttpPost]
+        public ActionResult CreateBlog(Models.BlogSummary summary)
+        {
+            //object blogIdResult = null;
+            //using (SqlConnection connection = new SqlConnection(@"server=.\SQLEXPRESS; DataBase=TestDB; Integrated Security=SSPI"))
+            //{
+            //    var command = connection.CreateCommand();
+            //    command.CommandText = "dbo.InsertBlog";
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    command.Parameters.Add(new SqlParameter("@Title", summary.Title));
+            //    command.Parameters.Add(new SqlParameter("@Description", summary.Title));
+            //    command.Parameters.Add(new SqlParameter("@AuthorName", summary.AuthorName));
+            //    command.Parameters.Add(new SqlParameter("@AuthorBio", summary.AuthorBio));
+            //    command.Parameters.Add(new SqlParameter("@AuthorAge", summary.AuthorAge));
+            //    command.Parameters.Add(new SqlParameter("@AuthorHometown", summary.AuthorHometown));               
+            //    connection.Open();
+            //    blogIdResult = command.ExecuteScalar();
+            //}
+            //summary.BlogId = (int)(decimal)blogIdResult;
+
+            var db = new Models.TestDBEntities();
+
+            Models.Blog blog = new Models.Blog { Title = summary.Title, Description = summary.Description };
+            Models.Author author = new Models.Author { Name = summary.AuthorName, Bio = summary.AuthorBio, Hometown = summary.AuthorHometown, Age = summary.AuthorAge };
+            db.AddToBlogs(blog);
+            db.AddToAuthors(author);
+            var result = db.SaveChanges();
+
+            summary.BlogId = blog.BlogId;
+            summary.AuthorId = author.AuthorId;
+
+            return View(new Models.BlogSummary(summary));
+        }
+
         [HttpPost]
         public ActionResult Blogs()
         {

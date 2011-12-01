@@ -27,9 +27,7 @@ namespace MvcWithAutomapper
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
-            //routes.MapRoute("Jquery", 
-            //                "Home/GetAllBlogs/", 
-            //                new { controller = "Home", action = "GetAllBlogs", id = UrlParameter.Optional });
+           
 
         }
 
