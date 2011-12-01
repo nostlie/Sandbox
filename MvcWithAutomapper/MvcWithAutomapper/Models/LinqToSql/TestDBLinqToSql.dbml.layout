@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TestDBLinqToSql">
+  <DataContextMoniker Name="/TestDBLinqToSqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db86aef8-5d53-4fec-90e7-80b19d414a21" absoluteBounds="4.25, 1.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/TestDBLinqToSqlDataContext/Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb70da45-ab8d-410d-bbd1-b060ff9a4789" absoluteBounds="4.265, 2.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb8306e4-22f0-4592-8b4c-2cb9130974c9" absoluteBounds="7.5, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TestDBLinqToSqlDataContext/Blog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ede50a0e-dfc9-4a9f-9e62-c6688be928be" absoluteBounds="7.5150000000000006, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.25 : 2.63544840494792); (7.5 : 2.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TestDBLinqToSqlDataContext/Author/Author_Blog" />
+      <nodes>
+        <classShapeMoniker Id="db86aef8-5d53-4fec-90e7-80b19d414a21" />
+        <classShapeMoniker Id="cb8306e4-22f0-4592-8b4c-2cb9130974c9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

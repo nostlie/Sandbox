@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TestDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TestDBModelStoreContainer">
+          <EntitySet Name="Author" EntityType="TestDBModel.Store.Author" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Blog" EntityType="TestDBModel.Store.Blog" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Blog_Author" Association="TestDBModel.Store.FK_Blog_Author">
+            <End Role="Author" EntitySet="Author" />
+            <End Role="Blog" EntitySet="Blog" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+          </Key>
+          <Property Name="AuthorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Bio" Type="varchar" MaxLength="1000" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Hometown" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Blog_Author">
+          <End Role="Author" Type="TestDBModel.Store.Author" Multiplicity="1" />
+          <End Role="Blog" Type="TestDBModel.Store.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TestDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authors" EntityType="TestDBModel.Author" />
+          <EntitySet Name="Blogs" EntityType="TestDBModel.Blog" />
+          <AssociationSet Name="FK_Blog_Author" Association="TestDBModel.FK_Blog_Author">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="Blog" EntitySet="Blogs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+          </Key>
+          <Property Name="AuthorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Bio" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Hometown" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Blogs" Relationship="TestDBModel.FK_Blog_Author" FromRole="Author" ToRole="Blog" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Author" Relationship="TestDBModel.FK_Blog_Author" FromRole="Blog" ToRole="Author" />
+        </EntityType>
+        <Association Name="FK_Blog_Author">
+          <End Role="Author" Type="TestDBModel.Author" Multiplicity="1" />
+          <End Role="Blog" Type="TestDBModel.Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestDBModelStoreContainer" CdmEntityContainer="TestDBEntities">
+          <EntitySetMapping Name="Authors"><EntityTypeMapping TypeName="TestDBModel.Author"><MappingFragment StoreEntitySet="Author">
+            <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Bio" ColumnName="Bio" />
+            <ScalarProperty Name="Age" ColumnName="Age" />
+            <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Blogs"><EntityTypeMapping TypeName="TestDBModel.Blog"><MappingFragment StoreEntitySet="Blog">
+            <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TestDB">
+        <EntityTypeShape EntityType="TestDBModel.Author" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1725878906250005" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDBModel.Blog" Width="1.5" PointX="3" PointY="1" Height="1.9802864583333335" IsExpanded="true" />
+        <AssociationConnector Association="TestDBModel.FK_Blog_Author" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.9901432291666668" />
+          <ConnectorPoint PointX="3" PointY="1.9901432291666668" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
