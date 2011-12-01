@@ -1,0 +1,50 @@
+﻿@model MvcWithAutomapper.Models.BlogSummary
+
+@{
+    ViewBag.Title = "CreateBlog";
+}
+
+<h2>New Blog!</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <div id="blogDiv">
+            <p>
+                <label for="Title">Blog Title:</label>
+                @Html.EditorFor(m => Model.Title)
+            </p>
+            <p>
+                <label for="Description">Blog Description:</label>
+                @Html.EditorFor(m => Model.Description)
+            </p>
+            <p>
+                <label for="AuthorName">Author Name:</label>
+                @Html.EditorFor(m => Model.AuthorName)
+            </p>
+            <p>
+                <label for="AuthorBio">Author Bio:</label>
+                @Html.TextAreaFor(m => Model.AuthorBio)
+            </p>
+            <p>
+                <label for="AuthorAge">Author Age:</label>
+                @Html.EditorFor(m => Model.AuthorAge)
+            </p>
+            <p>
+                <label for="AuthorHometown">Author Hometown:</label>
+                @Html.EditorFor(m => Model.AuthorHometown)
+            </p>
+            <p>
+                <input type="submit" value="Save it!" />
+            </p>
+        </div>
+    </fieldset>
+}
+
+
+
+<h3>@Model.Title </h3>
+@Model.Description <br />
+<p id="authorinfo">Author name: @Model.AuthorName<br />
+Author age: @Model.AuthorAge<br />
+Bio: @Model.AuthorBio</p>
