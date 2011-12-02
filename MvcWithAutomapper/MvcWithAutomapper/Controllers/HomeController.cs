@@ -79,9 +79,21 @@ namespace MvcWithAutomapper.Controllers
             return View(summaries);
         }
 
-        public ActionResult About()
-        {            
+        public ActionResult About(int? buttonClicked)
+        {
+            if (buttonClicked != null)
+            {
+                LinqToSql.TestDBLinqToSqlDataContext db = new LinqToSql.TestDBLinqToSqlDataContext();
 
+                Mapper.Reset();
+                Mapper.CreateMap<LinqToSql.Blog, Models.BlogSummary>();  
+
+                var query = (from b in db.Blogs select b).ToArray();
+
+                var summaries = Mapper.Map<LinqToSql.Blog[], Models.BlogSummary[]>(query);
+
+                return new JsonResult { Data = summaries, JsonRequestBehavior = System.Web.Mvc.JsonRequestBehavior.AllowGet };
+            }
             return View();
         }
 

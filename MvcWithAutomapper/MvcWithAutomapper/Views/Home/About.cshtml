@@ -1,8 +1,31 @@
-﻿@{
+﻿@model MvcWithAutomapper.Models.BlogSummary
+@{
     ViewBag.Title = "About Us";
 }
 
+<script type="text/javascript">
+    $(function () {
+        $('#button1').click(function (event) {
+
+            event.preventDefault();
+            $.getJSON('/Home/About/', function (data) {
+                alert("JSON Data: " + data);
+                $('#div1').html("<p>Title: " + data.Title + "</p>");
+            });
+        });
+    });
+</script>
+
 <h2>About</h2>
-<p>
-     Put content here.
-</p>
+
+<input type="button" id="button1" value="Click me" />
+
+    <div id="div1">
+    @* <h3>@Model.Title </h3>
+    @Model.Description <br />
+    <p id="authorinfo">Author name: @Model.AuthorName<br />
+    Author age: @Model.AuthorAge<br />
+    Bio: @Model.AuthorBio</p>*@
+    </div>
+
+
