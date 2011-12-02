@@ -9,3 +9,6 @@ PrismNavigationTest is a Silverlight project using the Unity and Prism framework
 
 MvcWithAutomapper is a MVC 3 Razor project demoing the Automapper <https://github.com/AutoMapper/AutoMapper>
 	- Prereqs: MVC 3 framework
+	
+WcfService1 is a basic working WCF service project that uses the Automapper
+	- Prereqs: Automapper.dll in Data project bin
