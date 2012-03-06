@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="18e3b283-d2e2-476b-a4d0-a9ae91d49763" name="Trissential@TRISSENTIAL-PC 2012-03-06 14:25:35" runUser="TRISSENTIAL-PC\Trissential" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="b3fa627c-d5b9-4f5a-a016-f9c758c9ab46">
+    <Deployment runDeploymentRoot="Trissential_TRISSENTIAL-PC 2012-03-06 14_25_35">
+      <DeploymentItem filename="c:\users\trissential\documents\visual studio 2010\Projects\MvcUnitTest\MvcUnitTest\bin\MvcUnitTest.dll" />
+      <DeploymentItem filename="c:\users\trissential\documents\visual studio 2010\Projects\MvcUnitTest\packages\Moq.4.0.10827\lib\NET40\Moq.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-06T14:25:35.3229986-06:00" queuing="2012-03-06T14:25:35.4590064-06:00" start="2012-03-06T14:25:35.4660068-06:00" finish="2012-03-06T14:25:36.8840879-06:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="IndexTest" storage="c:\users\trissential\documents\visual studio 2010\projects\mvcunittest\mvcunittest.tests\bin\debug\mvcunittest.tests.dll" id="54015d49-2b0e-336c-6efe-78bacbe02a4b">
+      <Execution id="7eb9161d-41b5-4199-959a-03e4c5456864" />
+      <TestMethod codeBase="c:/users/trissential/documents/visual studio 2010/Projects/MvcUnitTest/MvcUnitTest.Tests/bin/Debug/MvcUnitTest.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MvcUnitTest.Tests.Controllers.HomeControllerTest, MvcUnitTest.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IndexTest" />
+    </UnitTest>
+    <UnitTest name="AboutTest" storage="c:\users\trissential\documents\visual studio 2010\projects\mvcunittest\mvcunittest.tests\bin\debug\mvcunittest.tests.dll" id="6a22452a-3f53-e0e7-053e-856e1bd37140">
+      <Execution id="f63bbc56-613d-4e9f-944a-5a25d7923786" />
+      <TestMethod codeBase="c:/users/trissential/documents/visual studio 2010/Projects/MvcUnitTest/MvcUnitTest.Tests/bin/Debug/MvcUnitTest.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MvcUnitTest.Tests.Controllers.HomeControllerTest, MvcUnitTest.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AboutTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="54015d49-2b0e-336c-6efe-78bacbe02a4b" executionId="7eb9161d-41b5-4199-959a-03e4c5456864" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a22452a-3f53-e0e7-053e-856e1bd37140" executionId="f63bbc56-613d-4e9f-944a-5a25d7923786" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7eb9161d-41b5-4199-959a-03e4c5456864" testId="54015d49-2b0e-336c-6efe-78bacbe02a4b" testName="IndexTest" computerName="TRISSENTIAL-PC" duration="00:00:00.2414904" startTime="2012-03-06T14:25:35.4900082-06:00" endTime="2012-03-06T14:25:35.9980372-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7eb9161d-41b5-4199-959a-03e4c5456864">
+    </UnitTestResult>
+    <UnitTestResult executionId="f63bbc56-613d-4e9f-944a-5a25d7923786" testId="6a22452a-3f53-e0e7-053e-856e1bd37140" testName="AboutTest" computerName="TRISSENTIAL-PC" duration="00:00:00.0589178" startTime="2012-03-06T14:25:36.0060377-06:00" endTime="2012-03-06T14:25:36.0720414-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f63bbc56-613d-4e9f-944a-5a25d7923786">
+    </UnitTestResult>
+  </Results>
+</TestRun>
