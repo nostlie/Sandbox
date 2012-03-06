@@ -12,3 +12,6 @@ MvcWithAutomapper is a MVC 3 Razor project demoing the Automapper <https://githu
 	
 WcfService1 is a basic working WCF service project that uses the Automapper
 	- Prereqs: Automapper.dll in Data project bin
+
+MvcUnitTest is a MVC 3 project demoing Unit Testing using Moq and the Repository Pattern
+	- Prereqs: MVC 3, Install Moq
