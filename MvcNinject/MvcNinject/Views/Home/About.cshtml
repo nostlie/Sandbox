@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcNinject.Models.Views.BlahAboutViewModel>
+@{
+    ViewBag.Title = "About Us";
+}
+
+
+@foreach (var item in Model)
+{
+    <h2>@item.BlahAboutTitle</h2>
+    <p>
+         @item.BlahAboutBody
+    </p>
+}
