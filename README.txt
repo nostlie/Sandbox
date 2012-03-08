@@ -15,3 +15,6 @@ WcfService1 is a basic working WCF service project that uses the Automapper
 
 MvcUnitTest is a MVC 3 project demoing Unit Testing using Moq and the Repository Pattern
 	- Prereqs: MVC 3, Install Moq
+
+MvcNinject is a MVC 3 project configured to use Ninject for a dependency injection framework
+	- Prereqs: MVC 3, Install Ninject and NinjectMVC through Nuget
