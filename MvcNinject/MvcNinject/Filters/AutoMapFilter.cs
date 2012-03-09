@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AutoMapper;
+using MvcNinject.Controllers;
 
 namespace MvcNinject.Filters
 {
@@ -19,9 +16,9 @@ namespace MvcNinject.Filters
 
         public override void OnActionExecuted(System.Web.Mvc.ActionExecutedContext filterContext)
         {
+            var controller = (IModelMapperController)filterContext.Controller;
             var model = filterContext.Controller.ViewData.Model;
-            Mapper.CreateMap(_sourceType, _destType);
-            object viewModel = Mapper.Map(model, _sourceType, _destType);
+            object viewModel = controller.ModelMapper.Map(model, _sourceType, _destType);
             filterContext.Controller.ViewData.Model = viewModel;
         }
 

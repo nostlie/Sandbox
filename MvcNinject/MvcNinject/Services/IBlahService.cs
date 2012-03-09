@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MvcNinject.Models;
+﻿using MvcNinject.Models;
 
 namespace MvcNinject.Services
 {

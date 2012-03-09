@@ -84,7 +84,6 @@
     </Compile>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\IModelMapperController.cs" />
-    <Compile Include="Filters\AutoMapArraysFilter.cs" />
     <Compile Include="Filters\AutoMapAttribute.cs" />
     <Compile Include="Filters\AutoMapFilter.cs" />
     <Compile Include="Filters\BaseActionFilter.cs" />
@@ -131,7 +130,6 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Compile Include="Filters\AutoMapArrayAttribute.cs" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using MvcNinject.Filters;
+using MvcNinject.Mappers;
 using MvcNinject.Models;
 using MvcNinject.Models.Views;
 using MvcNinject.Services;
-using MvcNinject.Mappers;
 
 namespace MvcNinject.Controllers
 {
@@ -26,7 +23,7 @@ namespace MvcNinject.Controllers
             return View(Service.GetBlah(someParameter));
         }
 
-        [AutoMapArray(typeof(IEnumerable<BlahModel>), typeof(IEnumerable<BlahAboutViewModel>))]
+        [AutoMap(typeof(IEnumerable<BlahModel>), typeof(IEnumerable<BlahAboutViewModel>))]
         public ActionResult About()
         {
             var model = Service.GetAllBlahs();

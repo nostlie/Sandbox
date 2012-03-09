@@ -3,13 +3,12 @@
 
 namespace MvcNinject.App_Start
 {
-    using System.Reflection;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+    using MvcNinject.Mappers;
+    using MvcNinject.Repositories;
+    using MvcNinject.Services;
     using Ninject;
     using Ninject.Web.Mvc;
-    using MvcNinject.Services;
-    using MvcNinject.Repositories;
-    using MvcNinject.Mappers;
 
     public static class NinjectMVC3 
     {
