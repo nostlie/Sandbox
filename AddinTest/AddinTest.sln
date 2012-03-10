@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinTest", "AddinTest\AddinTest.csproj", "{B065B707-255F-4498-AFF8-4E93E080CD80}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstallAddinTest", "InstallAddinTest\InstallAddinTest.vdproj", "{22CB1CBF-A849-40C3-81AC-698FDB4D20FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B065B707-255F-4498-AFF8-4E93E080CD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B065B707-255F-4498-AFF8-4E93E080CD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B065B707-255F-4498-AFF8-4E93E080CD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B065B707-255F-4498-AFF8-4E93E080CD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CB1CBF-A849-40C3-81AC-698FDB4D20FD}.Debug|Any CPU.ActiveCfg = Debug
+		{22CB1CBF-A849-40C3-81AC-698FDB4D20FD}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
