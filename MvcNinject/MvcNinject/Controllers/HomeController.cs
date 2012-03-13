@@ -20,7 +20,8 @@ namespace MvcNinject.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
             bool someParameter = true;
-            return View(Service.GetBlah(someParameter));
+            var model = Service.GetBlah(someParameter);
+            return View(model);
         }
 
         [AutoMap(typeof(IEnumerable<BlahModel>), typeof(IEnumerable<BlahAboutViewModel>))]

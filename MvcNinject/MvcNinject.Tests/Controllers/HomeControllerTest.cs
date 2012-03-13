@@ -6,6 +6,7 @@ using Moq;
 using MvcNinject.Controllers;
 using MvcNinject.Models;
 using MvcNinject.Services;
+using MvcNinject.Models.Views;
 
 namespace MvcNinject.Tests.Controllers
 {
@@ -25,7 +26,10 @@ namespace MvcNinject.Tests.Controllers
             var mockService = new Mock<IBlahService>(MockBehavior.Strict);
             mockService.Setup(s => s.GetBlah(true)).Returns(expectedResult);
 
-            var controller = new HomeController(mockService.Object, new Mappers.BlahMapper());
+            var mockMapper = new Mock<Mappers.IMapper>(MockBehavior.Strict);
+            mockMapper.Setup(m => m.Map(expectedResult, typeof(BlahModel), typeof(BlahIndexViewModel)));
+
+            var controller = new HomeController(mockService.Object, mockMapper.Object);
             var result = controller.Index() as ViewResult;
             var model = result.Model as BlahModel;
 
@@ -57,7 +61,10 @@ namespace MvcNinject.Tests.Controllers
             var mockService = new Mock<IBlahService>(MockBehavior.Strict);
             mockService.Setup(s => s.GetAllBlahs()).Returns(expectedResult);
 
-            var controller = new HomeController(mockService.Object, new Mappers.BlahMapper());
+            var mockMapper = new Mock<Mappers.IMapper>(MockBehavior.Strict);
+            mockMapper.Setup(m => m.Map(expectedResult, typeof(IEnumerable<BlahModel>), typeof(IEnumerable<BlahIndexViewModel>)));
+
+            var controller = new HomeController(mockService.Object, mockMapper.Object);
             var result = controller.About() as ViewResult;
             var model = result.Model as IEnumerable<BlahModel>;
 

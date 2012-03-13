@@ -14,6 +14,10 @@ namespace MvcNinject.Filters
             _destType = DestType;
         }
 
+        /*
+         * After a Controller action is executed, take the resulting model and map it to the 
+         * ViewModel designated in the action method's Attribute
+         */
         public override void OnActionExecuted(System.Web.Mvc.ActionExecutedContext filterContext)
         {
             var controller = (IModelMapperController)filterContext.Controller;
