@@ -44,3 +44,4 @@ obj/
 *.xap
 packages.config
 */TestResults/
+*.user
