@@ -38,9 +38,9 @@ Thumbs.db
 *.pdb
 *.cache
 *.suo
-#*/packages/
+*/packages/
 bin/
 obj/
 *.xap
-#packages.config
+packages.config
 */TestResults/
