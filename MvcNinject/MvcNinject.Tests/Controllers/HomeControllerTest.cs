@@ -22,7 +22,7 @@ namespace MvcNinject.Tests.Controllers
                     BlahAboutBody = "This is the body",
                     BlahAboutTitle = "About Me"
                 };
-            var mockService = new Mock<IBlahService>();
+            var mockService = new Mock<IBlahService>(MockBehavior.Strict);
             mockService.Setup(s => s.GetBlah(true)).Returns(expectedResult);
 
             var controller = new HomeController(mockService.Object, new Mappers.BlahMapper());
@@ -54,7 +54,7 @@ namespace MvcNinject.Tests.Controllers
                     BlahAboutTitle = "About Me2"
                 }
             };
-            var mockService = new Mock<IBlahService>();
+            var mockService = new Mock<IBlahService>(MockBehavior.Strict);
             mockService.Setup(s => s.GetAllBlahs()).Returns(expectedResult);
 
             var controller = new HomeController(mockService.Object, new Mappers.BlahMapper());

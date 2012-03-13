@@ -5,7 +5,7 @@ namespace MvcNinject.Services
 {
     public class BlahService : IBlahService
     {
-        /* This is the service layer. My business logic goes here, as well as 
+        /* This is the service layer. My business logic goes here
          * This layer should pass a valid object to a repository to be persisted (EF, WCF Service, etc.)
          * and pass back a domain model object (BlahModel)
          */
@@ -24,6 +24,7 @@ namespace MvcNinject.Services
 
         public BlahModel GetBlah(bool parameter)
         {
+            // Some business logic
             if (parameter)
             {
                 return _blahRepository.GetBlahTrue();

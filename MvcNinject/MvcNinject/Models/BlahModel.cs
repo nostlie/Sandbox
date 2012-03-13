@@ -7,9 +7,11 @@ namespace MvcNinject.Models
 {
     public class BlahModel
     {
-        /*
-         * The Model can be used as a mapping destination from the data layer.
-         * The mapping of this Model to the ViewModel would happen in the Controller
+        /*         
+         * The mapping of this Model to the ViewModel happens in the Action Filter called from the 
+         *      Action Attribute of the controller method.
+         * This Model is really a representation of the Domain Model, whether it's EF or a mapped 
+         *      object from a web server, etc.
          */
         public int BlahId { get; set; }
         public string BlahMessage { get; set; }
