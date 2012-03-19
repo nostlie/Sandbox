@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using WcfService1.Contracts;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using AutoMapper;
+using WcfService1.Contracts;
 
 
 namespace WcfService1.Data

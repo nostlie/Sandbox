@@ -4,43 +4,6 @@
         <name>AddinTest</name>
     </assembly>
     <members>
-        <member name="T:AddinTest.Helper">
-            <summary>
-            Exposes general helper functions for entire application
-            </summary>
-        </member>
-        <member name="M:AddinTest.Helper.GetResource(System.String)">
-            <summary>
-            Gets the specified resource as a stream.
-            </summary>
-            <param name="resourceName">Name of the resource.</param>
-            <returns>Stream</returns>
-        </member>
-        <member name="M:AddinTest.Helper.GetProject(EnvDTE.Projects,System.String)">
-            <summary>
-            Gets the project.
-            </summary>
-            <param name="projects">The solution projects.</param>
-            <param name="projectName">Name of the project.</param>
-            <returns>Project</returns>
-        </member>
-        <member name="F:AddinTest.WCFSolution.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:AddinTest.WCFSolution.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:AddinTest.WCFSolution.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="T:AddinTest.Connect">
             <summary>The object for implementing an Add-in.</summary>
             <seealso class='IDTExtensibility2' />
@@ -92,6 +55,43 @@
             <param term='varOut'>Parameters passed from the command handler to the caller.</param>
             <param term='handled'>Informs the caller if the command was handled or not.</param>
             <seealso class='Exec' />
+        </member>
+        <member name="F:AddinTest.WCFSolution.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:AddinTest.WCFSolution.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:AddinTest.WCFSolution.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:AddinTest.Helper">
+            <summary>
+            Exposes general helper functions for entire application
+            </summary>
+        </member>
+        <member name="M:AddinTest.Helper.GetResource(System.String)">
+            <summary>
+            Gets the specified resource as a stream.
+            </summary>
+            <param name="resourceName">Name of the resource.</param>
+            <returns>Stream</returns>
+        </member>
+        <member name="M:AddinTest.Helper.GetProject(EnvDTE.Projects,System.String)">
+            <summary>
+            Gets the project.
+            </summary>
+            <param name="projects">The solution projects.</param>
+            <param name="projectName">Name of the project.</param>
+            <returns>Project</returns>
         </member>
     </members>
 </doc>

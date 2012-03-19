@@ -18,5 +18,12 @@ namespace UnitTests
             var service = new SVC.Service1();
             var result = service.GetBlogs();
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var controller = new WcfService1.Controllers.Controller1();
+            var result = controller.GetBlogs();
+        }
     }
 }
