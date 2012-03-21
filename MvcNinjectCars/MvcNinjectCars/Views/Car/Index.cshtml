@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MvcNinjectCars.Models.Views.CarViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>Car(s)</legend>
+    @foreach (var item in Model)
+    {
+        <div class="editor-field"> 
+            Manufacturer :
+            @Html.Label(item.ManufacturerName)
+        </div> 
+        <div class="editor-field"> 
+            Model :
+            @Html.Label(item.Name)
+        </div> 
+        <div class="editor-field"> 
+            Color :
+            @Html.Label(item.Color)
+        </div> 
+        <div class="editor-field"> 
+            Price :
+            @Html.Label(string.Format("{0:C0}", item.Price))
+        </div>
+        <br />
+    }
+</fieldset>
+<p>
+    @Html.ActionLink("Toyota Camry", "Index", new { carId = 1  }) |
+    @Html.ActionLink("All Toyota Cars", "Index", new { manufacturerId = 1 }) |
+    @Html.ActionLink("All Available Cars", "Index", new { availableFlag = true }) |
+    @Html.ActionLink("All Cars", "Index", new { availableFlag = false })
+</p>
