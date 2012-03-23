@@ -35,3 +35,31 @@
     @Html.ActionLink("All Available Cars", "Index", new { availableFlag = true }) |
     @Html.ActionLink("All Cars", "Index", new { availableFlag = false })
 </p>
+
+@Ajax.ActionLink("Click to toggle car", "CarDetails", 
+    new AjaxOptions 
+    {        
+        UpdateTargetId = "cardiv",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "GET"
+    })
+
+<div id="cardiv">
+
+</div>
+
+
+@using (Ajax.BeginForm("CarSearch", "Car", new AjaxOptions
+    {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "carSearchResults"
+    }))
+{
+    <input type="text" name="q" id="hey" data-autocomplete="@Url.Action("CarQuickSearch", "Car")" />
+    <input type="submit" value="Search" />
+}
+
+<div id="carSearchResults">
+
+</div>

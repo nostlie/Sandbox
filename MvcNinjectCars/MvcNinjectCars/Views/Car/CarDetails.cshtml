@@ -1,0 +1,13 @@
+﻿@model MvcNinjectCars.Models.Views.CarViewModel
+
+
+
+<div class="cardiv">
+    <h4>@Model.ManufacturerName - @Model.Name</h4>
+    <span>Price: @string.Format("{0:C0}", Model.Price)</span>
+    <p>
+        <span>Color: @Model.Color</span>
+    </p>
+</div>
+
+
