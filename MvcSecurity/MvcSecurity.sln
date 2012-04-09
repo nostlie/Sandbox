@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSecurity", "MvcSecurity\MvcSecurity.csproj", "{DE781468-A08D-4737-AFE8-6BDB03BABB5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSecurity.Tests", "MvcSecurity.Tests\MvcSecurity.Tests.csproj", "{6B29BAE7-840E-4CFB-96FA-71F2C22C923E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE781468-A08D-4737-AFE8-6BDB03BABB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE781468-A08D-4737-AFE8-6BDB03BABB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE781468-A08D-4737-AFE8-6BDB03BABB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE781468-A08D-4737-AFE8-6BDB03BABB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B29BAE7-840E-4CFB-96FA-71F2C22C923E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B29BAE7-840E-4CFB-96FA-71F2C22C923E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B29BAE7-840E-4CFB-96FA-71F2C22C923E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B29BAE7-840E-4CFB-96FA-71F2C22C923E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

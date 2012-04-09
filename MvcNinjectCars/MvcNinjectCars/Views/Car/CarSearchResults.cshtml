@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MvcNinjectCars.Models.Views.CarViewModel>
+
+<div id="carSearchResults">
+    @foreach (var car in Model)
+    { 
+        <h4>@car.ManufacturerName - @car.Name</h4>
+        <span>Price: @string.Format("{0:C0}", car.Price)</span>
+        <p>
+            <span>Color: @car.Color</span>
+        </p>
+    }
+</div>
