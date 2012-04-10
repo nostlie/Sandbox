@@ -18,3 +18,6 @@ MvcUnitTest is a MVC 3 project demoing Unit Testing using Moq and the Repository
 
 MvcNinject is a MVC 3 project configured to use Ninject for a dependency injection framework and Moq as a object mocking framework
 	- Prereqs: MVC 3, Install Ninject, NinjectMVC, Moq and AutoMapper through Nuget
+
+MvcNinjectCars is a MVC 3 project similar to the above MvcNinject, but as a more concrete example. 
+	- Prereqs: none, this is ready to run
