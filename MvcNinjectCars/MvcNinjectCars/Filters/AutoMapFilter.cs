@@ -15,7 +15,7 @@ namespace MvcNinjectCars.Filters
         }
 
         /*
-         * After a Controller action is executed, take the resulting model and map it to the 
+         * After a Controller action is executed, take the resulting Data Access Model and map it to the 
          * ViewModel designated in the action method's Attribute
          */
         public override void OnActionExecuted(System.Web.Mvc.ActionExecutedContext filterContext)

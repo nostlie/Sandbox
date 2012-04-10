@@ -14,23 +14,32 @@ namespace MvcNinjectCars.Controllers
     {
         private bool _carToggle = false;
 
-        // Constructor takes injected service and mapper interfaces and calls base constructor,
-        //  which also has the Service and ModelMapper properties
+        /*
+         * Constructor takes injected service and mapper interfaces and calls base constructor,
+         *  which also has the Service and ModelMapper properties
+         */
         public CarController(ICarService carService, IMapper carMapper)
             : base(carService, carMapper)
         {
         }
 
-        // The AutoMap attribute is a custom attribute that sets the Source and Destination
-        //      Type properties then calls OnActionExecuted of the AutoMapFilter action filter
-        //      The AutoMapFilter takes the filterContext's instance of Controller, finds its
-        //      ModelMapper property, and performs the mapping
-        // AutoMapper also knows how to map CarModel.ManufacturerModel.Name to CarViewModel.ManufacturerName
-        // The Index view is strongly typed to IEnumerable<CarViewModel>
+        /* 
+         * There is a one-to-one relationship between ViewModels and Views. To maintain this
+         *      and to only include necessary properties, map the result of the service call
+         *      to a view model.
+         * The AutoMap attribute is a custom attribute that sets the Source and Destination
+         *      Type properties then calls OnActionExecuted of the AutoMapFilter action filter
+         *      The AutoMapFilter takes the filterContext's instance of Controller, finds its
+         *      ModelMapper property, and performs the mapping.
+         * AutoMapper also knows how to map CarModel.ManufacturerModel.Name to CarViewModel.ManufacturerName
+         * The Index view is strongly typed to IEnumerable<CarViewModel>.     
+         */
         [AutoMap(typeof(IEnumerable<CarModel>), typeof(IEnumerable<CarViewModel>))]
         public ActionResult Index(bool availableFlag, int carId = 0, int manufacturerId = 0)
         {
             CarModel[] model;
+
+            // This is just some logic to demonstrate different scenarios.
             if (manufacturerId == 0 && carId != 0)
             {
                 model = new[] { Service.GetCar(carId) };
@@ -65,8 +74,10 @@ namespace MvcNinjectCars.Controllers
             return PartialView("CarDetails", car);
         }
 
-        // The CarSearch action returns a partial view that shows the details of a list of cars
-        // This was created to show how to implement a search box using Ajax.BeginForm functionality
+        /* 
+         * The CarSearch action returns a partial view that shows the details of a list of cars
+         * This was created to show how to implement a search box using Ajax.BeginForm functionality
+         */
         [AutoMap(typeof(IEnumerable<CarModel>), typeof(IEnumerable<CarViewModel>))]
         public PartialViewResult CarSearch(string q)
         {

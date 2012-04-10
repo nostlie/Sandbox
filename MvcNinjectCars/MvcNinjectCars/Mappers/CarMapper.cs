@@ -9,6 +9,7 @@ namespace MvcNinjectCars.Mappers
     {
         static CarMapper()
         {
+            // Configure the AutoMapper for future use
             Mapper.CreateMap<CarModel, CarViewModel>();
         }
 

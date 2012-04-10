@@ -4,6 +4,12 @@ using MvcNinjectCars.Repositories;
 
 namespace MvcNinjectCars.Services
 {
+    /*
+     * The Service layer is meant to be where any business logic or other
+     *      manipulation of data (outside of object mapping) takes place. 
+     * This layer keeps the Controller and Repository layers relatively clean
+     *      and allows for easier unit testing.
+     */
     public class CarService : ICarService
     {
         ICarRepository _repository;

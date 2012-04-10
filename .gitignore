@@ -35,13 +35,11 @@ Thumbs.db
 
 # Visual Studio #
 #################
-*.pdb
+#*.pdb
 *.cache
 *.suo
-*/packages/
 bin/
 obj/
 *.xap
-packages.config
 */TestResults/
 *.user

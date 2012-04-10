@@ -4,6 +4,11 @@ using MvcNinjectCars.Filters;
 
 namespace MvcNinjectCars.Attributes
 {
+    /*
+     * This is a basic implementation of the ActionFilterAttribute abstract class. 
+     *      All this does is hold the SourceType and DestType properties and pass them
+     *      to the AutoMapFilter when OnActionExecuted is called.
+     */
     public class AutoMapAttribute : ActionFilterAttribute
     {
         private readonly Type _sourceType;

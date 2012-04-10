@@ -4,6 +4,10 @@ using MvcNinjectCars.Models;
 
 namespace MvcNinjectCars.Repositories
 {
+    /*
+     * These Repository methods would normally make a DAL call, to EF, SQL Server, etc.
+     *      These values are hard-coded for demo purposes.
+     */ 
     public class CarRepository : ICarRepository
     {
         public CarModel GetCar(int carId)
@@ -21,6 +25,7 @@ namespace MvcNinjectCars.Repositories
             return CarData;
         }
 
+        // This data is for demo purposes
         private CarModel[] CarData
         {
             get

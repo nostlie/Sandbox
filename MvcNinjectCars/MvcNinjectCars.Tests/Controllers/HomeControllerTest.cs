@@ -16,6 +16,7 @@ namespace MvcNinjectCars.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
+        // Demo of a Unit Test using Moq
         [TestMethod]
         public void Index_GetCar()
         {
