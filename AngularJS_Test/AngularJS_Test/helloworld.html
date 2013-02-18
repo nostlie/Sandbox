@@ -8,6 +8,11 @@
         hr {
             margin-left: -30px;
         }
+        ul, ol {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
         .indent {
             margin-left: 30px;
         }
@@ -17,18 +22,36 @@
             // Set inital value
             $scope.yourName = "Nathan";
         }
+        function TodoCtrl($scope) {
+            $scope.numTodos = 3;
+            $scope.todos = [
+                { text: "Wake up", done: false },
+                { text: "Be awesome", done: false }
+            ];
+        }
     </script>
 </head>
 <body>
     <h2>Testing some AngularJS tutorial material.</h2><hr />
 
 <div class="indent" ng-controller="HelloCtrl">
+    <h3>Hello World</h3>
     <label>Name: </label>
     <input type="text" ng-model="yourName" placeholder="Enter a name"/>
 
-    <h2>Hello {{yourName}}, welcome to AngularJS!</h2>
+    <h4>Hello {{yourName}}, welcome to AngularJS!</h4>
 
     <hr />
+</div>
+<div class="indent" ng-controller="TodoCtrl">
+    <h3>Todo List</h3>
+    <span>Number of Todos: {{todos.length}}</span>
+    <ul class="indent">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span>{{todo.text}}</span>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
