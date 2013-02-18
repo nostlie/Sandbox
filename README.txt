@@ -21,3 +21,5 @@ MvcNinject is a MVC 3 project configured to use Ninject for a dependency injecti
 
 MvcNinjectCars is a MVC 3 project similar to the above MvcNinject, but as a more concrete example. 
 	- Prereqs: none, this is ready to run
+
+AngularJS_Test is a MVC 4 project with angular.js added and demoed.
