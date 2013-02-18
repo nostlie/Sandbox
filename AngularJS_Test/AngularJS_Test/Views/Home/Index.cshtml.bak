@@ -13,10 +13,10 @@
 <hr />
 
 <script type="text/javascript">
-    function TodoCtrl($scope) {
-        $scope.totalTodos = 2;
+    function TodoCtrl(scope) {
+        scope.totalTodos = 2;
 
-        $scope.todos = [
+        scope.todos = [
             { text: "Wake up", done: false },
             { text: "Be awesome", done: false }
         ];
@@ -24,7 +24,7 @@
 
 </script>
 
-<div ng-controller="TodoCtrl">
+<div ng-controllers="TodoCtrl">
     <h2>Total todos: {{totalTodos}}</h2>
     <ul>
         <li ng-repeat="todo in todos">
