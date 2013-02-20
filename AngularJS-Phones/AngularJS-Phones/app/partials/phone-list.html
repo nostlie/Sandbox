@@ -1,0 +1,11 @@
+<p>This is the partial for phone list.</p>
+
+
+<ul class="phonelist">
+    <li ng-repeat="phone in phones">
+        <div class="text-center">
+            <a href="#/phones/{{phone.id}}"><img width="100" src="{{phone.img}}" /></a><br />
+            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+        </div>
+    </li>
+</ul>
