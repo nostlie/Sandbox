@@ -1,5 +1,10 @@
-﻿<p>This is the partial for phone reviews.</p>
-<p>
-    Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+﻿
+<h2>Reviews for {{phone.name}}</h2>
+
+<ul>
+    <li ng-repeat="review in reviews">
+        <h4>Review by user {{review.user}}</h4>
+        <p>{{review.reviewText}}</p>
+        <hr />
+    </li>
+</ul>
