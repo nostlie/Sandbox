@@ -1,11 +1,21 @@
-<p>This is the partial for phone list.</p>
+<h2>Available Phones</h2>
 
-
+Filter: 
+<input type="text" ng-model="query.name" />
+Order by: 
+<select ng-model="orderProp">
+    <option value="name">Alphabetical A-Z</option>
+    <option value="-name">Alphabetical Z-A</option>
+    <option value="price">Price low to high</option>
+    <option value="-price">Price high to low</option>
+</select>
+<a href="" ng-click="reverse=!reverse">Reverse order</a>
 <ul class="phonelist">
-    <li ng-repeat="phone in phones">
+    <li ng-repeat="phone in phones | filter: query | orderBy: orderProp: reverse">
         <div class="text-center">
             <a href="#/phones/{{phone.id}}"><img width="100" src="{{phone.img}}" /></a><br />
             <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+            <span>${{phone.price}}</span>
         </div>
     </li>
 </ul>

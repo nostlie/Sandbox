@@ -63,10 +63,10 @@
     <Content Include="app\lib\angular\angular.js" />
     <Content Include="app\lib\angular\angular.min.js" />
     <Content Include="app\lib\angular\version.txt" />
-    <Content Include="app\lib\jquery-1.9.1.min.js" />
     <Content Include="app\partials\phone-list.html" />
     <Content Include="app\partials\phone-details.html" />
     <Content Include="app\partials\phone-reviews.html" />
+    <Content Include="app\phones\hey.html" />
     <Content Include="config\testacular-e2e.conf.js" />
     <Content Include="config\testacular.conf.js" />
     <Content Include="scripts\web-server.js" />
@@ -83,6 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="logs\.gitignore" />
@@ -92,7 +97,9 @@
     <Content Include="scripts\test.sh" />
     <Content Include="scripts\watchr.rb" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="app\phones\phones.json" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="app\phones\dell-streak-7.json" />
     <Content Include="app\phones\dell-venue.json" />
@@ -100,6 +107,19 @@
     <Content Include="app\phones\droid-pro-by-motorola.json" />
     <Content Include="app\phones\motorola-atrix-4g.json" />
     <Content Include="app\phones\motorola-bravo-with-motoblur.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
