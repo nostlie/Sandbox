@@ -1,0 +1,47 @@
+﻿
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">Plethora of Pianos</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <ul data-bind="foreach: allPianos">
+        <li>
+            <span data-bind="text: ManufacturerName"></span>
+        </li>
+    </ul>
+    <button data-bind="click: addLetter">Add Letter</button>
+</div>
+@section scripts 
+{   
+    <script>
+        var Piano = function (id, manuName, pianoName) {
+            var self = this;
+            self.Id = ko.observable(id);
+            self.ManufacturerName = ko.observable(manuName);
+            self.PianoName = ko.observable(pianoName);
+        }
+
+        var viewModel = {
+            allPianos: ko.observableArray([
+                new Piano(1, "Steinway", "Model C"),
+                new Piano(2, "Kawai", "EX Concert Grand")
+            ]),
+
+            addLetter: function () {
+                var piano = ko.utils.arrayFirst(viewModel.allPianos(), function (item) {
+                    return item.Id() == 1;
+                });
+                ko.utils.arrayForEach(viewModel.allPianos(), function (item) {
+                    item.ManufacturerName(item.ManufacturerName() + "X");
+                    item.PianoName(item.PianoName() + "X");
+                });
+            }
+        };
+
+        ko.applyBindings(viewModel);
+    </script>
+}
