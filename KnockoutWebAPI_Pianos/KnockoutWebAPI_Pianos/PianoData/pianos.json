@@ -1,4 +1,1 @@
-﻿[
-	{ name: "Steinway Model C", description: "Hey this is a good piano" },
-	{ name: "Kawai Baby Grand", description: "This is an okay piano" }
-]
+﻿{ Id: 2, PianoName: "EX Concert Grand", ManufacturerName: "Kawai" }

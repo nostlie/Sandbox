@@ -18,23 +18,13 @@
 @section scripts 
 {   
     <script>
-        var Piano = function (id, manuName, pianoName) {
-            var self = this;
-            self.Id = ko.observable(id);
-            self.ManufacturerName = ko.observable(manuName);
-            self.PianoName = ko.observable(pianoName);
-        }
+        
 
+        var data = [];
         var viewModel = {
-            allPianos: ko.observableArray([
-                new Piano(1, "Steinway", "Model C"),
-                new Piano(2, "Kawai", "EX Concert Grand")
-            ]),
 
+            allPianos: ko.observableArray(data),
             addLetter: function () {
-                var piano = ko.utils.arrayFirst(viewModel.allPianos(), function (item) {
-                    return item.Id() == 1;
-                });
                 ko.utils.arrayForEach(viewModel.allPianos(), function (item) {
                     item.ManufacturerName(item.ManufacturerName() + "X");
                     item.PianoName(item.PianoName() + "X");
@@ -43,5 +33,39 @@
         };
 
         ko.applyBindings(viewModel);
+
+
+        $(function () {
+            $.ajax({
+                url: "/api/Piano",
+                type: "GET",
+                cache: false,
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                },
+                statusCode: {
+                    200: function (data) {
+                        var allPianos = [];
+                        $.each(data, function (i, val) {
+                            allPianos.push(
+                                {
+                                    Id: ko.observable(data[i].Id),
+                                    ManufacturerName: ko.observable(data[i].ManufacturerName),
+                                    PianoName: ko.observable(data[i].PianoName)
+                                });
+                        });
+                        viewModel.allPianos(allPianos);
+                    },
+                    404: function (data) {
+                        alert("/api/Piano not found!");
+                    },
+                    400: function (data) {
+                        alert("Bad request");
+                    }
+                }
+            });
+
+        });
     </script>
 }

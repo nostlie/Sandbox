@@ -12,11 +12,16 @@ namespace KnockoutWebAPI_Pianos.Controllers
     public class PianoController : ApiController
     {
         // GET api/piano
-        public IEnumerable<string> Get()
+        public IEnumerable<object> Get()
         {
-            var file = HttpContext.Current.Server.MapPath("/PianoData/pianos.json");
+            //var file = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("/PianoData/pianos.json"));
 
-            return new string[] { "value1", "value2" };
+            var pianos = new[] {
+                new { Id = 1, ManufacturerName = "Steinway", PianoName = "Model D Concert Grand" },
+                new { Id = 2, ManufacturerName = "Kawai", PianoName = "EX Concert Grand" }
+            };
+
+            return pianos;
         }
 
         // GET api/piano/5
