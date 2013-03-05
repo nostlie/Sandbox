@@ -21,7 +21,7 @@ namespace MvcSecurity
 
             // The RequireHttpsAttribute should be applied globally to avoid transmitting cookie in cleartext
             // I used a self-signed cert for localhost testing (http://blogs.iis.net/thomad/archive/2010/04/16/setting-up-ssl-made-easy.aspx)
-            filters.Add(new RequireHttpsAttribute());
+            //filters.Add(new RequireHttpsAttribute());
             filters.Add(new HandleErrorAttribute());
         }
 
