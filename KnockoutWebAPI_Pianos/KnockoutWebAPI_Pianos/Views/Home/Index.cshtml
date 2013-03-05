@@ -1,0 +1,71 @@
+﻿
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">Plethora of Pianos</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <ul data-bind="foreach: allPianos">
+        <li>
+            <span data-bind="text: ManufacturerName"></span>
+        </li>
+    </ul>
+    <button data-bind="click: addLetter">Add Letter</button>
+</div>
+@section scripts 
+{   
+    <script>
+        
+
+        var data = [];
+        var viewModel = {
+
+            allPianos: ko.observableArray(data),
+            addLetter: function () {
+                ko.utils.arrayForEach(viewModel.allPianos(), function (item) {
+                    item.ManufacturerName(item.ManufacturerName() + "X");
+                    item.PianoName(item.PianoName() + "X");
+                });
+            }
+        };
+
+        ko.applyBindings(viewModel);
+
+
+        $(function () {
+            $.ajax({
+                url: "/api/Piano",
+                type: "GET",
+                cache: false,
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                },
+                statusCode: {
+                    200: function (data) {
+                        var allPianos = [];
+                        $.each(data, function (i, val) {
+                            allPianos.push(
+                                {
+                                    Id: ko.observable(data[i].Id),
+                                    ManufacturerName: ko.observable(data[i].ManufacturerName),
+                                    PianoName: ko.observable(data[i].PianoName)
+                                });
+                        });
+                        viewModel.allPianos(allPianos);
+                    },
+                    404: function (data) {
+                        alert("/api/Piano not found!");
+                    },
+                    400: function (data) {
+                        alert("Bad request");
+                    }
+                }
+            });
+
+        });
+    </script>
+}
